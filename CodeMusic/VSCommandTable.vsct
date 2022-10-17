@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Include href="KnownImageIds.vsct"/>
+  <Include href="VSGlobals.vsct"/>
+
+  <Commands package="CodeMusic">
+    <Groups>
+      <Group guid="CodeMusic" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_TOOL_STANDARD"/>
+      </Group>
+    </Groups>
+
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <Button guid="CodeMusic" id="PlayOrPause" priority="0x0100" type="Button">
+        <Parent guid="CodeMusic" id="MyMenuGroup" />
+        <Icon guid="ImageCatalogGuid" id="AudioPlayback" />
+        <CommandFlag>IconIsMoniker</CommandFlag>
+        <Strings>
+          <ButtonText>Play or pause</ButtonText>
+          <LocCanonicalName>.CodeMusic.Play/Pause</LocCanonicalName>
+			<ToolTipText> Play music to code with </ToolTipText>
+        </Strings>
+      </Button>
+
+		<Button guid="CodeMusic" id="cmdPrevious" priority="0x0100" type="Button">
+			<Parent guid="CodeMusic" id="MyMenuGroup" />
+			<Icon guid="ImageCatalogGuid" id="PreviousFrame" />
+			<CommandFlag>IconIsMoniker</CommandFlag>
+			<Strings>
+				<ButtonText>Previous Song</ButtonText>
+				<LocCanonicalName>.CodeMusic.PreviousSong</LocCanonicalName>
+			</Strings>
+		</Button>
+		
+		<Button guid="CodeMusic" id="cmdNext" priority="0x0100" type="Button">
+			<Parent guid="CodeMusic" id="MyMenuGroup" />
+			<Icon guid="ImageCatalogGuid" id="NextFrame" />
+			<CommandFlag>IconIsMoniker</CommandFlag>
+			<Strings>
+				<ButtonText>Next Song</ButtonText>
+				<LocCanonicalName>.CodeMusic.NextSong</LocCanonicalName>
+			</Strings>
+		</Button>
+    </Buttons>
+  </Commands>
+	
+	<KeyBindings>
+		<KeyBinding guid="CodeMusic" id="PlayOrPause" editor="guidVSStd97" key1="P" mod1="Control Shift" ></KeyBinding>
+	</KeyBindings>
+	
+  <Symbols>
+    <GuidSymbol name="CodeMusic" value="{e29a49be-b568-4906-afcd-82eff11b153f}">
+      <IDSymbol name="MyMenuGroup" value="0x0001" />
+      <IDSymbol name="PlayOrPause" value="0x0100" />
+      <IDSymbol name="cmdNext" value="0x0102" />
+      <IDSymbol name="cmdPrevious" value="0x0101" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
